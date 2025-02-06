@@ -17,10 +17,21 @@
         </div>
     </div>
  
-    <model-viewer id="model-viewer" src="models/Church.glb" alt="Church"
-        ar-modes="scene-viewer quick-look" ar-scale="auto" camera-controls touch-action="none" shadow-intensity="1"
-        interpolation-decay="200" min-camera-orbit="auto auto 5%" camera-orbit="-10deg -45deg 5m"
-        camera-target="0m 0m 0m" field-of-view="45deg" ar>
+    <model-viewer 
+        id="model-viewer" 
+        src="models/Church.glb" 
+        alt="Church"
+        ar-modes="scene-viewer quick-look" 
+        ar-scale="auto" 
+        camera-controls 
+        auto-rotate
+        touch-action="none" 
+        shadow-intensity="1"
+        interpolation-decay="200" 
+        min-camera-orbit="auto auto 5%" 
+        camera-orbit="-10deg -45deg 5m"
+        camera-target="0m 0m 0m" 
+        field-of-view="45deg" ar>
 
         <button id="ar-button" slot="ar-button">AR-режим</button>
         <div id="error" class="hide">AR is not supported on this device</div>
@@ -112,8 +123,8 @@
     </model-viewer>
 
     <!-- Логотипы -->
-    <img src="images/5sensar-logo.svg" alt="Logo Left" class="logo logo-left">
-    <img src="images/Unity-park-logo.svg" alt="Logo Right" class="logo logo-right">
+    <!-- <img src="images/5sensar-logo.svg" alt="Logo Left" class="logo logo-left">
+    <img src="images/Unity-park-logo.svg" alt="Logo Right" class="logo logo-right"> -->
 
 
     <script>
@@ -148,32 +159,32 @@
 
     <script type="module">
         const modelViewer2 = document.querySelector("#model-viewer");
-        // Сохраняем начальные значения камеры
-        const defaultCameraTarget = modelViewer2.cameraTarget;
-        const defaultCameraOrbit = modelViewer2.cameraOrbit;
-        const defaultFieldOfView = modelViewer2.fieldOfView;
+        // // Сохраняем начальные значения камеры
+        // const defaultCameraTarget = modelViewer2.cameraTarget;
+        // const defaultCameraOrbit = modelViewer2.cameraOrbit;
+        // const defaultFieldOfView = modelViewer2.fieldOfView;
 
-        // Переменные для отслеживания, какая кнопка была нажата
-        let lastClickedHotspot = null;
+        // // Переменные для отслеживания, какая кнопка была нажата
+        // let lastClickedHotspot = null;
 
 
-        const annotationClicked = (annotation) => {
-            let dataset = annotation.dataset;
+        // const annotationClicked = (annotation) => {
+        //     let dataset = annotation.dataset;
 
-            if (lastClickedHotspot === annotation) {
-                // Если нажата та же самая кнопка, возвращаем камеру в исходное состояние
-                modelViewer2.cameraTarget = defaultCameraTarget;
-                modelViewer2.cameraOrbit = defaultCameraOrbit;
-                modelViewer2.fieldOfView = defaultFieldOfView;
-            } else {
-                // Если нажата другая кнопка, приближаем камеру к новой цели
-                modelViewer.cameraTarget = dataset.target;
-                modelViewer.cameraOrbit = dataset.orbit;
-            }
+        //     if (lastClickedHotspot === annotation) {
+        //         // Если нажата та же самая кнопка, возвращаем камеру в исходное состояние
+        //         modelViewer2.cameraTarget = defaultCameraTarget;
+        //         modelViewer2.cameraOrbit = defaultCameraOrbit;
+        //         modelViewer2.fieldOfView = defaultFieldOfView;
+        //     } else {
+        //         // Если нажата другая кнопка, приближаем камеру к новой цели
+        //         modelViewer.cameraTarget = dataset.target;
+        //         modelViewer.cameraOrbit = dataset.orbit;
+        //     }
 
-            // Обновляем информацию о последней нажатой кнопке
-            lastClickedHotspot = annotation;
-        };
+        //     // Обновляем информацию о последней нажатой кнопке
+        //     lastClickedHotspot = annotation;
+        // };
 
         modelViewer2.querySelectorAll('button').forEach((hotspot) => {
             console.log(hotspot);
