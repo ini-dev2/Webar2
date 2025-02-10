@@ -139,15 +139,6 @@
     <!-- <img src="images/5sensar-logo.svg" alt="Logo Left" class="logo logo-left">
     <img src="images/Unity-park-logo.svg" alt="Logo Right" class="logo logo-right"> -->
     <script>
-      const modelViewer = document.getElementById('viewer');
-  
-        modelViewer.addEventListener('load', () => {
-        const model = modelViewer.model;
-        model.scale.set(0.1, 0.1, 0.1);
-      });
-    </script>
-
-    <script>
         let modelViewer = document.querySelector('#model-viewer');
         const loadingScreen = document.querySelector('#loading-screen');
         const progressBar = document.querySelector('#progress');
@@ -211,7 +202,14 @@
             hotspot.addEventListener('click', () => annotationClicked(hotspot));
         });
     </script>
-
+    <script>
+      const modelViewer = document.getElementById('viewer');
+  
+        modelViewer.addEventListener('load', () => {
+        const model = modelViewer.model;
+        model.scale.set(0.1, 0.1, 0.1);
+      });
+    </script>
     <script>
         const reportedDpr = document.querySelector('#reportedDpr');
         const renderedDpr = document.querySelector('#renderedDpr');
