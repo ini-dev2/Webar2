@@ -33,7 +33,6 @@
         camera-orbit="-10deg -45deg 5m"
         camera-target="0m 0m 0m" 
         HEAD
-        scale = "0.01 0.01 0.01"
         field-of-view="45deg" ar>
     <!-- //attributes -->
 
@@ -139,7 +138,14 @@
     <!-- Логотипы -->
     <!-- <img src="images/5sensar-logo.svg" alt="Logo Left" class="logo logo-left">
     <img src="images/Unity-park-logo.svg" alt="Logo Right" class="logo logo-right"> -->
-
+    <script>
+      const modelViewer = document.getElementById('viewer');
+  
+        modelViewer.addEventListener('load', () => {
+        const model = modelViewer.model;
+        model.scale.set(0.1, 0.1, 0.1);
+      });
+    </script>
 
     <script>
         let modelViewer = document.querySelector('#model-viewer');
