@@ -202,14 +202,7 @@
             hotspot.addEventListener('click', () => annotationClicked(hotspot));
         });
     </script>
-    <script>
-      const modelViewer = document.getElementById('viewer');
-  
-        modelViewer.addEventListener('load', () => {
-        const model = modelViewer.model;
-        model.scale.set(0.1, 0.1, 0.1);
-      });
-    </script>
+
     <script>
         const reportedDpr = document.querySelector('#reportedDpr');
         const renderedDpr = document.querySelector('#renderedDpr');
